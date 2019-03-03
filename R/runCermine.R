@@ -16,6 +16,7 @@
 #'
 pdf_to_convert <-function(directory)
 {
-  ajastfile <-c("afile")
-  return(ajatsfile)
+  cmd <- paste("java -cp cermine-impl-1.13-jar-with-dependencies.jar pl.edu.icm.cermine.ContentExtractor -path", directory)
+  output <- try(system(cmd, intern = TRUE))
+  return(output)
 }
