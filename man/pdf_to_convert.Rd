@@ -4,10 +4,36 @@
 \alias{pdf_to_convert}
 \title{Run cermine on a PdF.}
 \usage{
-pdf_to_convert(directory)
+pdf_to_convert(directory, outputs, exts, override, timeout, configuration)
 }
 \arguments{
-\item{directory}{a directory containing the the PDF to convert.}
+\item{outputs}{(optional) list of extraction
+output(s); possible values:
+"jats" (document metadata and content in NLM JATS format),
+"text" (raw document text),
+"zones" (text zones with their labels),
+"trueviz" (geometric structure in TrueViz format),
+"images" (images from the document);
+default: "jats,images"}
+
+\item{exts}{(optional) comma-separated list of
+extensions of the resulting files;
+the list has to have the same length as output list;
+default: "cermxml,images"}
+
+\item{override}{Boolean whether to override previous created files or not}
+
+\item{timeout}{(optional) approximate maximum allowed processing
+time for a PDF file in seconds; by default, no timeout is used;
+the value is approximate because in some cases,
+the program might be allowed to slightly exceeded this time,
+say by a second or two.}
+
+\item{configuration}{(optional) path to configuration properties file
+see https://github.com/CeON/CERMINE
+for description of available configuration properties}
+
+\item{path}{path to a directory containing PDF files}
 }
 \value{
 A vector containing the file reference to the JATS xml file.
