@@ -17,5 +17,5 @@
 pdf_to_convert <-function(directory)
 {
   ajastfile <-c("afile")
-  return(ajastfile)
+  return(ajatsfile)
 }
