@@ -36,8 +36,6 @@
 #' @author Jason Mumbulla, \email{jasonmumbulla@@gmail.com}
 #'
 #' @examples
-#' require(xml2)
-#'
 #' cermine(c("~/pdfdir"))
 #'
 #' # overwrite any existing converted JATS files.
