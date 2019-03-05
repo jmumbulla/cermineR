@@ -4,9 +4,11 @@
 \alias{cermine}
 \title{Converts a PDF to a JATS file.}
 \usage{
-cermine(directory, outputs, exts, override, timeout, configuration)
+cermine(path, outputs, exts, override, timeout, configuration)
 }
 \arguments{
+\item{path}{path to a directory containing PDF files.}
+
 \item{outputs}{(optional) list of extraction
 output(s); possible values:
 "jats" (document metadata and content in NLM JATS format),
@@ -33,8 +35,6 @@ say by a second or two.}
 \item{configuration}{(optional) path to configuration properties file
 see https://github.com/CeON/CERMINE
 for description of available configuration properties.}
-
-\item{path}{path to a directory containing PDF files.}
 }
 \value{
 A vector containing the file reference to the JATS xml file.

@@ -50,19 +50,19 @@
 # library(devtools)
 # document()
 
-cermine <-function(directory,outputs,exts,override,timeout,configuration)
+cermine <-function(path,outputs,exts,override,timeout,configuration)
 {
   if(missing(override)) {override <- FALSE}
   cmd <- paste("java -cp cermine-impl-1.13-jar-with-dependencies.jar pl.edu.icm.cermine.ContentExtractor",
                if(override){c("-override")},
-               c("-path"), directory,
+               c("-path"), path,
                if(!missing(outputs)){paste(c("-outputs"),outputs)},
                if(!missing(exts)){paste(c("-exts"),exts)},
                if(!missing(timeout)){paste(c("-timeout"),timeout)},
                if(!missing(configuration)){paste(c("-configuration"),configuration)}
                )
   output <- try(system(cmd, intern = TRUE))
-  cmd2 <- paste("ls ", directory, "/*.cermxml", sep = "")
+  cmd2 <- try(paste("ls ", path, "/*.cermxml", sep = ""))
   xml.file <- try(system(cmd2, intern = TRUE))
   return(xml.file)
 }
